@@ -1,4 +1,4 @@
-# Use the official OpenJDK image from DockerHub
+# Use an official OpenJDK runtime as a parent image
 FROM openjdk:17-jdk-alpine
 
 # Set the working directory inside the container
