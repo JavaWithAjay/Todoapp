@@ -31,23 +31,7 @@ Run the generated JAR file:
 java -jar target/Todoapp.jar
 Access the Application
 Open your browser and go to:
-
 http://localhost:8080
-Directory Structure
-
-Todoapp/
-│
-├── src/main/java/com/cloudengineer/Todoapp
-│   ├── TodoappApplication.java       # Main Spring Boot Application
-│   ├── controller/TaskController.java # Handles HTTP requests
-│   ├── model/Task.java               # Task Model Class
-│
-├── src/main/resources
-│   ├── templates/index.html          # Frontend Thymeleaf template
-│   └── application.properties        # Configuration file
-│
-├── pom.xml                           # Maven Dependencies
-└── README.md                         # Project Documentation
 
 Endpoints
 HTTP Method	Endpoint	Description
