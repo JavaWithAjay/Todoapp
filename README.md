@@ -68,7 +68,7 @@ Step 5: Access the Application
 Open your web browser and enter the Public IP address of the EC2 instance followed by :8080.
 
 Example:
-http://<EC2-public-IP>:8080
+http://15.206.179.91:8080
 You should now be able to access the Spring Boot To-Do app running on your AWS EC2 instance.
 
 Future Improvements
