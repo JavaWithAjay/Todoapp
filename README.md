@@ -1,104 +1,80 @@
-To-Do App (Spring Boot)
-This is a simple To-Do application built using Java and Spring Boot. The app allows users to add, view, their to-do tasks. The app is containerized using Docker for easy deployment.
-
-Technologies Used
-Java 17 (or your preferred version of Java)
-Spring Boot (for the backend)
-Maven (for project management and dependency management)
-Docker (optional for containerization)
-Render (for cloud deployment and you can use also amazon aws heroku etc)
+To-Do App
+This is a simple To-Do application built with Java and Spring Boot. This application allows users to add and view tasks in a to-do list. It is deployed on AWS EC2 and does not require Docker for deployment.
 
 Features
-Add tasks: Users can add tasks to their to-do list.
-View tasks: All added tasks are listed in the app.
-Dockerized: The app is containerized using Docker for easy deployment.
-Cloud Deployment: The app can be deployed on Render, a cloud platform.
+Add new tasks to the to-do list.
+View all added tasks.
+Technologies Used
+Java (Spring Boot)
+Maven (for project management and dependencies)
+AWS EC2 (for deployment)
+Getting Started Locally
+Step 1: Clone the Repository
 
-Getting Started
-Prerequisites
-Java 17 or higher
-Maven (for building the project)
-Docker (optional, for containerization)
-Git (for cloning the repository)
-Clone the Repository
-Clone the repository to your local machine:
-
-git clone https://github.com/JavaWithAjay/Todoapp.git
+git clone https://github.com/YourUsername/Todoapp.git
 cd Todoapp
-How to Run Locally
-1. With Maven
-Navigate to the project directory in your terminal.
+Step 2: Install Java (JDK 17 or higher)
+Make sure that Java 17 (or higher) is installed on your system. You can verify this by running:
 
-Build the project using Maven:
+java -version
+If Java is not installed, download and install it from the Oracle Java Downloads page or use an OpenJDK distribution.
+
+Step 3: Build the Application
+Use Maven to build the application and create a JAR file:
 
 mvn clean package
-After building, run the application:
+The built JAR file will be located in the target/ folder.
+
+Step 4: Run the Application Locally
+Run the application using the following command:
 
 java -jar target/Todoapp.jar
-By default, the app will be accessible at:
+The application will be available at http://localhost:8080.
 
-http://localhost:8080
-Running with Docker (Optional)
-If you prefer to use Docker to run your app, follow these steps.
+Deploying on AWS EC2 (Windows)
+This application is deployed on an AWS EC2 Windows instance.
 
-1. Build Docker Image
-Make sure your Dockerfile is in the root directory of the project.
+Step 1: Launch an EC2 Instance
+Log in to the AWS Management Console and go to EC2 Dashboard.
+Launch a new Windows-based EC2 instance (for example, using Windows Server 2019).
+Make sure to open port 8080 in the Security Group settings to allow access to the Spring Boot app.
+Step 2: Connect to the EC2 Instance
+Download the RDP file from the EC2 dashboard.
+Open the RDP file and enter the credentials to connect to the Windows instance.
+Step 3: Install Java on EC2
+Once connected to the EC2 instance, install Java (JDK 17 or higher):
 
-docker build -t todoapp .
-2. Run Docker Container
-Run the Docker container:
+Download and install JDK 17 from the official Oracle site.
+Verify the installation:
 
+java -version
+Step 4: Upload the JAR File to EC2
+You can use WinSCP or MobaXterm to upload the Todoapp.jar file from your local machine to your EC2 instance.
 
-docker run -p 8080:8080 todoapp
-The app will be accessible at:
+For WinSCP:
 
+Connect to your EC2 instance using WinSCP with your EC2 credentials.
+Upload the Todoapp.jar file to a directory on your EC2 instance (for example, C:\Users\Administrator\).
+Step 5: Run the Application on EC2
+Open Command Prompt or PowerShell on the EC2 instance.
+Navigate to the directory where the JAR file is uploaded.
+Run the Spring Boot application:
 
-http://localhost:8080
-Deployment on Render
-Deploy to Render
-You can deploy the To-Do app to Render by following these steps:
+java -jar Todoapp.jar
+The application will run on port 8080.
 
-Go to the Render Dashboard.
-Create a new web service and link it to your GitHub repository.
-Select Docker as the deployment environment.
-Fill in the following settings:
-Build Command:
-bash
-Copy code
-mvn clean package
-Start Command:
-bash
-Copy code
-java -jar target/Todoapp.jar
-Click "Create Web Service" to deploy the app.
-Render will provide you with a public URL once the deployment is successful, and your app will be accessible at:
+Step 6: Access the Application
+Open your web browser and enter the Public IP address of the EC2 instance followed by :8080.
 
-
-https://your-app-name.onrender.com
-Project Structure
-Here is the basic structure of the project:
-
-
-To-Do App/
-│
-├── Dockerfile               # Dockerfile for building the Docker image
-├── pom.xml                  # Maven project configuration
-├── src/                     # Source code directory
-│   ├── main/
-│   ├── test/
-├── target/                  # Generated JAR files (after building with Maven)
-├── README.md                # Project documentation
+Example:
+http://<EC2-public-IP>:8080
+You should now be able to access the Spring Boot To-Do app running on your AWS EC2 instance.
 
 Future Improvements
-Database Integration: Add a database (e.g., MySQL or PostgreSQL) to store tasks persistently.
-User Authentication: Implement user authentication to allow multiple users to manage their own tasks.
-Task Categories: Add the ability for users to organize tasks into categories (e.g., Work, Personal).
-Task Priority: Allow users to set the priority of each task (High, Medium, Low).
-Task Deadline: Add the option to set a deadline for each task, and notify users when a deadline is approaching.
+User Authentication: Add a user login and registration system to allow users to securely manage their tasks.
+Database Integration: Integrate a database (like MySQL or PostgreSQL) to store tasks persistently instead of in-memory storage.
+Task Priority: Add the ability to set priorities or deadlines for tasks.
+Task Categories: Organize tasks into different categories or tags for better management.
 
-Troubleshooting
-Error: "No such file or directory": Ensure that the Dockerfile is in the correct location (the root directory).
-Error: "Permission Denied": Ensure that the Dockerfile has the correct permissions, and that all required files (like the .jar file) are available.
-Error: "Port 8080 is already in use": Ensure that no other process is using port 8080 locally before running the app.
-Contributing
-If you would like to contribute to this project, feel free to fork the repository and make a pull request. Contributions are welcome!
+Conclusion
+Your Spring Boot To-Do app is now live on AWS EC2 and you can access it through the public URL provided by AWS. This guide showed you how to deploy the application without using Docker, directly on a Windows-based EC2 instance.
