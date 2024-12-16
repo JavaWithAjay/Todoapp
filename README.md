@@ -13,28 +13,20 @@ Technologies Used
 ________________________________________
 Getting Started Locally
 Step 1: Clone the Repository
-bash
-Copy code
 git clone https://github.com/YourUsername/Todoapp.git
 cd Todoapp
 Step 2: Install Java (JDK 17 or higher)
 Make sure that Java 17 (or higher) is installed on your system. You can verify this by running:
-bash
-Copy code
 java -version
 If Java is not installed, download and install it from the Oracle Java Downloads page or use an OpenJDK distribution.
 ________________________________________
 Step 3: Build the Application
 Use Maven to build the application and create a JAR file:
-bash
-Copy code
 mvn clean package
 The built JAR file will be located in the target/ folder.
 ________________________________________
 Step 4: Run the Application Locally
 Run the application using the following command:
-bash
-Copy code
 java -jar target/Todoapp.jar
 The application will be available at http://localhost:8080.
 ________________________________________
@@ -48,8 +40,6 @@ Step 2: Install Java on EC2
 Once connected to the EC2 instance, install Java (JDK 17 or higher):
 1.	Download and install JDK 17 from the official Oracle site.
 2.	Verify the installation:
-bash
-Copy code
 java -version
 ________________________________________
 Step 3: Upload the JAR File to EC2
@@ -62,21 +52,18 @@ Step 4: Run the Application on EC2
 1.	Open Command Prompt or PowerShell on the EC2 instance.
 2.	Navigate to the directory where the JAR file is uploaded.
 3.	Run the Spring Boot application:
-bash
-Copy code
 java -jar Todoapp.jar
 The application will run on port 8080.
 ________________________________________
 Step 5: Access the Application
 Open your web browser and enter the Public IP address of the EC2 instance followed by :8080.
 Example:
-arduino
-Copy code
 http://15.206.179.91:8080
 You should now be able to access the Spring Boot To-Do app running on your AWS EC2 instance.
 ________________________________________
 Monitoring Application Metrics Using AWS CloudWatch
 To monitor the performance and health of the deployed To-Do app on AWS EC2, AWS CloudWatch has been configured.
+
 
 Steps to Monitor Metrics:
 1.	Log in to AWS Management Console.
@@ -88,7 +75,7 @@ o	Network In/Out
 o	Disk Reads/Writes
 Screenshot:
 
-![image](https://github.com/user-attachments/assets/228c04b5-8328-40f1-9b36-7fcd6c27fb34)
+![image](https://github.com/user-attachments/assets/777aa6e0-141f-460d-80b1-b0d830fa1b9a)
 
 ________________________________________
 Future Improvements
