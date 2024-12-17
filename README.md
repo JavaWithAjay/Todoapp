@@ -73,7 +73,6 @@ For this application, we have designed a scalable architecture that includes the
 4.	Elastic IP & Public Accessibility: EC2 instances are publicly accessible through an elastic IP, allowing global access to the app.
 This scalable architecture ensures the application can handle increased traffic and remain available under varying load conditions.
 ![scale_page-0001](https://github.com/user-attachments/assets/d30fdf90-7a1f-4809-a44d-d4b07b1dddcf)
-________________________________________
 Monitoring Application Metrics Using AWS CloudWatch
 To monitor the performance and health of the deployed To-Do app on AWS EC2, AWS CloudWatch has been configured.
 Steps to Monitor Metrics:
@@ -84,9 +83,7 @@ Steps to Monitor Metrics:
 o	CPU Utilization
 o	Network In/Out
 o	Disk Reads/Writes
- 
 _________![image](https://github.com/user-attachments/assets/2cd0b42b-36b1-40ba-b161-21c5f3df4530)
-_______________________________
 Future Improvements
 •	User Authentication: Add a user login and registration system to allow users to securely manage their tasks.
 •	Database Integration: Integrate a database (like MySQL or PostgreSQL) to store tasks persistently instead of in-memory storage.
